@@ -1,0 +1,1786 @@
+.portfolio-carousel {
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    right: 1vw;
+}
+
+.brand-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: var(--content-height);
+    border-bottom: none;
+}
+
+.brand-image-wrap,
+.brand-copy {
+    padding: 2.1rem;
+}
+
+.brand-image-wrap {
+    padding: 0;
+}
+
+.brand-image {
+    width: 100%;
+    height: 100%;
+    min-height: var(--content-height);
+    object-fit: cover;
+    filter: none;
+}
+
+.hero-btn-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    align-items: flex-start;
+    margin-top: 1.2rem;
+}
+
+.portfolio-fullwidth {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+    height: calc(100vh - var(--header-height, 120px) - var(--footer-height, 60px));
+}
+
+.portfolio-fullwidth .portfolio-grid {
+    display: grid;
+    grid-template-columns: calc(25% - 3px) calc(25% - 3px) calc(25% - 6px) calc(25% - 6px);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 6px;
+    row-gap: 6px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    flex: 1 1 auto;
+    min-height: 0;
+}
+
+.portfolio-fullwidth .portfolio-item {
+    position: relative;
+    overflow: hidden;
+    min-height: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+.portfolio-fullwidth .portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-fullwidth .portfolio-item img.crossfade-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 2s ease-in-out;
+}
+
+.portfolio-fullwidth .portfolio-item img.crossfade-img.active {
+    opacity: 1;
+}
+
+.portfolio-fullwidth .portfolio-item img.crossfade-img.inactive {
+    opacity: 0;
+}
+
+.portfolio-fullwidth .portfolio-meta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-fullwidth .portfolio-item:hover .portfolio-meta {
+    opacity: 1;
+}
+
+.portfolio-fullwidth .portfolio-title,
+.portfolio-fullwidth .portfolio-location {
+    margin: 0;
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    line-height: 1.85;
+    text-transform: uppercase;
+    letter-spacing: normal;
+    color: #000;
+}
+
+.portfolio-fullwidth .portfolio-title {
+    font-weight: 700;
+}
+
+.portfolio-fullwidth .portfolio-location {
+    font-weight: 300;
+}
+
+
+.portfolio-fullwidth .portfolio-item:hover img {
+    transform: scale(1.07);
+    transition: opacity 2s ease-in-out, transform 0.3s ease;
+}
+
+.portfolio-fullwidth .portfolio-item:hover .portfolio-meta {
+    opacity: 1;
+}
+
+@media (max-width: 1200px) {
+    .portfolio-fullwidth .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 4px;
+    }
+
+    .portfolio-fullwidth .portfolio-item {
+        aspect-ratio: 1 / 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .portfolio-fullwidth .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 2px;
+    }
+
+    .portfolio-fullwidth .portfolio-item {
+        aspect-ratio: 1 / 1;
+    }
+}
+
+.footer-content {
+    position: relative;
+}
+
+.footer-cities {
+    position: static;
+    display: inline-block;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: #000;
+    font-family: var(--font-main);
+    font-weight: 400;
+    text-transform: none;
+    margin-left: 0.8rem;
+    vertical-align: middle;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 100vw;
+    gap: 24px;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.project {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border: 2px solid #d0c8b8;
+    background: #fff;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.project-label {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 0 16px 0;
+    font-size: 1rem;
+}
+
+.project-name {
+    font-weight: bold;
+    font-family: var(--font-main);
+}
+
+.project-location {
+    font-family: var(--font-main);
+    color: #888;
+}
+
+:root {
+    --font-main: "League Spartan", sans-serif;
+    --bg: #ffffff;
+    --panel: #ffffff;
+    --text: #000;
+    --muted: #000;
+    --line: #c9c4ba;
+    --nav-strip-height: 78px;
+    --footer-strip-height: 39px;
+    --content-height: calc(100dvh - var(--nav-strip-height) - var(--footer-strip-height));
+}
+
+@font-face {
+    font-family: "Des Montillesf";
+    src: url("../fonts/des-montillesf.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Melodrama";
+    src: url("../fonts/Melodrama-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Melodrama";
+    src: url("../fonts/Melodrama-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Melodrama";
+    src: url("../fonts/Melodrama-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Melodrama";
+    src: url("../fonts/Melodrama-Semibold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Melodrama";
+    src: url("../fonts/Melodrama-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Boska";
+    src: url("../fonts/Boska-Extralight.otf") format("opentype");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Boska";
+    src: url("../fonts/Boska-ExtralightItalic.otf") format("opentype");
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Boska";
+    src: url("../fonts/Boska-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Boska";
+    src: url("../fonts/Boska-LightItalic.otf") format("opentype");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Boska";
+    src: url("../fonts/Boska-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Boska";
+    src: url("../fonts/Boska-Italic.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Boska";
+    src: url("../fonts/Boska-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Boska";
+    src: url("../fonts/Boska-MediumItalic.otf") format("opentype");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Boska";
+    src: url("../fonts/Boska-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Boska";
+    src: url("../fonts/Boska-BoldItalic.otf") format("opentype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Boska";
+    src: url("../fonts/Boska-Black.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Boska";
+    src: url("../fonts/Boska-BlackItalic.otf") format("opentype");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+    scroll-padding-top: var(--nav-strip-height);
+    scroll-padding-bottom: var(--footer-strip-height);
+}
+
+body {
+    margin: 0;
+    background: var(--panel);
+    color: var(--text);
+    font-family: var(--font-main);
+    font-weight: 400;
+}
+
+.top-nav-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    font-family: var(--font-main);
+    border-bottom: 1px solid var(--line);
+    height: var(--nav-strip-height);
+    padding: 0 1.4rem;
+    background: var(--panel);
+}
+
+.top-nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.4rem;
+}
+
+.brand {
+    font-family: var(--font-main);
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 1.40625rem;
+    font-weight: 700;
+    letter-spacing: normal;
+    line-height: 1.85;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.top-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 1.15rem;
+}
+
+.top-links a,
+.menu-link {
+    display: flex;
+    font-family: var(--font-main);
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: normal;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.85;
+    color: #000;
+}
+
+.site-shell {
+    width: 100%;
+}
+
+#about,
+#clients,
+#portfolio,
+#work-with-me,
+#contact {
+    scroll-margin-top: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.site-shell>section {
+    height: var(--content-height);
+    min-height: var(--content-height);
+    overflow: hidden;
+    margin: 0;
+}
+
+.hero-panel,
+.manifesto-panel,
+.explore-grid,
+.expect-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: var(--content-height);
+    border-bottom: none;
+}
+
+.hero-image-wrap,
+.hero-copy,
+.manifesto-inner,
+.explore-copy,
+.expect-copy {
+    padding: 2.1rem;
+}
+
+.hero-image-wrap {
+    padding: 0;
+    border-right: 0;
+}
+
+.hero-image-wrap,
+.explore-copy,
+.expect-image {
+    border-right: 1px solid var(--line);
+}
+
+.hero-image,
+.manifesto-image,
+.explore-image,
+.expect-image {
+    width: 100%;
+    height: 100%;
+    min-height: var(--content-height);
+    object-fit: cover;
+    object-position: top center;
+    filter: grayscale(100%);
+}
+
+.hero-image {
+    filter: none;
+}
+
+.manifesto-image {
+    border-left: 0;
+    transform: none;
+}
+
+.hero-copy,
+.explore-copy,
+.expect-copy {
+    display: grid;
+    align-content: center;
+    max-width: 520px;
+}
+
+.hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateY(-17%);
+    max-width: none;
+    width: 100%;
+    padding-top: 12.9rem;
+    padding-bottom: 2.4rem;
+    padding-right: 3.4rem;
+    overflow-y: auto;
+}
+
+.hero-copy h1,
+.manifesto-inner h2,
+.expect-copy h3 {
+    font-family: var(--font-main);
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.03;
+}
+
+.hero-copy h1 {
+    margin-top: 0.75rem;
+    font-size: clamp(1.2rem, 2.3vw, 1.9rem);
+}
+
+.subtitle {
+    margin: 0.75rem 0 0;
+    font-size: 1.68rem;
+    color: #000;
+    font-style: italic;
+}
+
+.hero-copy p {
+    margin: 0.75rem 0 0;
+    color: #000;
+    font-size: 0.9rem;
+    line-height: 1.85;
+}
+
+.hero-copy p:not(.subtitle):not(.background-title) {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.manifesto-inner {
+    text-align: left;
+    align-self: center;
+    max-width: 780px;
+    padding-left: 3.5rem;
+}
+
+.manifesto-inner h2 {
+    font-size: 1.40625rem;
+    font-weight: 700;
+    line-height: 1.85;
+    letter-spacing: normal;
+    text-transform: uppercase;
+}
+
+.manifesto-lines {
+    list-style: none;
+    margin: 0.8rem 0;
+    padding: 0;
+}
+
+.manifesto-lines li {
+    padding: 0.7rem 0.2rem 0.7rem 0;
+    color: #000;
+    font-size: 0.9rem;
+    line-height: 1.85;
+}
+
+.manifesto-lines li:last-child {
+    border-bottom: 0;
+}
+
+.eyebrow {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    font-size: 0.55rem;
+}
+
+.ghost-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    border: 1px solid var(--line);
+    padding: 0.45rem 0.4rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.52rem;
+    color: var(--text);
+}
+
+.hero-copy .ghost-btn,
+.manifesto-inner .ghost-btn {
+    align-self: flex-start;
+    font-family: var(--font-main);
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.85;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    color: #000;
+    background: var(--panel);
+    border: 1px solid #d8d8d8;
+    border-radius: 999px;
+    padding: 0.22rem 0.7rem;
+    margin-top: 1.8rem;
+    min-width: 180px;
+    text-align: center;
+}
+
+.clients-strip {
+    min-height: var(--content-height);
+    border-bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+}
+
+.brand-copy,
+.brand-image-wrap {
+    padding: 2.1rem;
+}
+
+.brand-image-wrap {
+    padding: 0;
+}
+
+.brand-image {
+    width: 100%;
+    height: 100%;
+    min-height: var(--content-height);
+    object-fit: cover;
+    filter: none;
+}
+
+.brand-copy h3 {
+    margin-top: 0;
+    margin-bottom: 1.6rem;
+    align-self: center;
+    text-align: center;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.brand-copy .brand-script {
+    font-family: "Boska", "Bodoni Moda", serif;
+    font-style: normal;
+    font-size: clamp(3.6rem, 7.8vw, 6.4rem);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.005em;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.brand-copy .brand-serif {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(3rem, 6.6vw, 5.3rem);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+.brand-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(0%);
+}
+
+.brand-copy .brand-text-block {
+    width: min(82%, 520px);
+}
+
+.brand-copy p {
+    margin: 0.75rem auto 0;
+    color: #000;
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.85;
+    text-align: justify;
+    text-justify: inter-word;
+    width: 100%;
+}
+
+.brand-copy .brand-shop-btn {
+    display: inline-block;
+    width: auto;
+    margin-top: 2rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-family: "Boska", serif;
+    font-style: normal;
+    font-size: 0.72rem;
+    font-weight: 300;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    color: #fff;
+    background: #000;
+    border: 1px solid #000;
+    border-radius: 999px;
+    padding: 0.2rem 1.05rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+.brand-copy .background-title {
+    margin-top: 1.65rem;
+    font-size: 1.40625rem;
+    font-weight: 700;
+    line-height: 1.85;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.brand-copy .brand-email a {
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+}
+
+.clients-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.3rem;
+    flex-wrap: wrap;
+}
+
+.clients-row span {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.64rem;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    padding: 0.28rem 0.5rem;
+}
+
+.explore-copy ul {
+    list-style: none;
+    margin: 0.8rem 0;
+    padding: 0;
+}
+
+.explore-copy li {
+    border-top: 1px solid var(--line);
+    padding: 0.7rem 0.2rem 0.7rem 0;
+    color: #000;
+    font-size: 0.66rem;
+    line-height: 1.5;
+}
+
+.explore-copy li:last-child {
+    border-bottom: 1px solid var(--line);
+}
+
+#portfolio.explore-grid {
+    display: grid;
+    place-items: stretch;
+    height: var(--content-height);
+    min-height: var(--content-height);
+    width: 100%;
+    border-bottom: 0;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 100vw;
+    gap: 24px;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.project {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border: 2px solid #d0c8b8;
+    background: #fff;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.project-label {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 0 16px 0;
+    font-size: 1rem;
+}
+
+.clients-strip {
+    min-height: var(--content-height);
+    border-bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+}
+
+.expect-copy h3 {
+    font-size: 1.40625rem;
+    font-weight: 700;
+    line-height: 1.85;
+    letter-spacing: normal;
+    text-transform: uppercase;
+}
+
+.expect-copy p {
+    margin: 0.85rem 0 0;
+    color: #000;
+    font-size: 0.9rem;
+    line-height: 1.85;
+}
+
+#contact.expect-grid {
+    grid-template-columns: 1fr;
+    height: calc(100vh - var(--nav-strip-height) - var(--footer-strip-height) + 39px);
+    min-height: calc(100vh - var(--nav-strip-height) - var(--footer-strip-height) + 39px);
+    border-top: 0;
+    margin-top: 0;
+    background: var(--panel);
+    scroll-margin-top: 0;
+    overflow: hidden;
+}
+
+#contact .expect-copy {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 0;
+}
+
+.expect-image {
+    object-position: center top;
+}
+
+.contact-inline-email a {
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+}
+
+.contact-signature {
+    display: block;
+    max-height: 53px;
+    width: auto;
+    margin: 1.8rem auto 0;
+}
+
+.footer-nav-wrap {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 95;
+    border-top: 1px solid var(--line);
+    padding: 0 1rem;
+    background: var(--panel);
+    font-family: var(--font-main);
+    min-height: var(--footer-strip-height);
+}
+
+.footer-content {
+    width: 100%;
+    height: var(--footer-strip-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+}
+
+.linkedin-link {
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+}
+
+.hero-copy h1 {
+    margin-top: 0.75rem;
+    font-size: 1.40625rem;
+    font-weight: 700;
+    line-height: 1.85;
+    letter-spacing: normal;
+    text-transform: uppercase;
+}
+
+.hero-copy .background-title {
+    margin-top: 1.65rem;
+    font-size: 1.40625rem;
+    font-weight: 700;
+    line-height: 1.85;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.linkedin-link svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+}
+
+.footer-email {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+}
+
+.footer-rights {
+    margin-left: auto;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: #000;
+    font-family: var(--font-main);
+    font-weight: 400;
+}
+
+@media (max-width: 860px) {
+    .top-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-panel,
+    .manifesto-panel,
+    .explore-grid,
+    .expect-grid,
+    .clients-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image-wrap,
+    .manifesto-image,
+    .explore-copy,
+    .expect-image {
+        border-right: 0;
+    }
+
+    .manifesto-image {
+        border-left: 0;
+    }
+
+    .hero-image,
+    .manifesto-image,
+    .expect-image,
+    .brand-image {
+        min-height: 320px;
+    }
+
+    .explore-grid .portfolio-grid {
+        width: min(92%, 700px);
+        min-height: 0;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(6, minmax(0, 1fr));
+        aspect-ratio: 2 / 6;
+    }
+
+    .site-shell>section,
+    .hero-panel,
+    .manifesto-panel,
+    .explore-grid,
+    .expect-grid,
+    .clients-strip {
+        min-height: var(--content-height);
+    }
+
+}
+
+@media (max-width: 640px) {
+    .top-links {
+        justify-content: center;
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: flex;
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - var(--header-height));
+    background-color: #fff;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal-content {
+    display: flex;
+    width: 80%;
+    height: 80%;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.modal-image {
+    flex: 1;
+    background: #000;
+}
+
+.modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-details {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.close-button {
+    position: absolute;
+    top: 80px;
+    right: 30px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #000;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+header,
+footer {
+    position: relative;
+    z-index: 1100;
+}
+
+/* Style the header logo to fit within the banner */
+.header-logo {
+    max-height: 51px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top: 0.4rem;
+}
+
+/* Style the background logo to make it 80% smaller and align it to the left */
+.background-logo img {
+    width: 28.8%;
+    display: block;
+    margin: 4rem 0 0 0;
+    float: left;
+    margin-left: -2rem;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.arrow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.arrow-btn.left {
+    left: 10px;
+}
+
+.arrow-btn.right {
+    right: 10px;
+}
+
+.main-header,
+.main-footer {
+    width: 100%;
+    background: #f8f9fa;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1000;
+}
+
+.modal-body {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-meta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-meta {
+    opacity: 1;
+}
+
+.project-logo {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE DESIGN — Desktop-first (max-width media queries)
+   Added below all existing styles. Nothing above this line was modified.
+   ========================================================================== */
+
+/* ── Hamburger Menu Button (hidden by default on desktop) ── */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 101;
+    flex-shrink: 0;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 18px;
+    height: 1.5px;
+    background: #000;
+    margin: 4px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hamburger → X animation when nav is open */
+.nav-toggle.active span:nth-child(1) {
+    transform: translateY(5px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: translateY(-5px) rotate(-45deg);
+}
+
+
+/* ──────────────────────────────────────────────────────────────────
+   BREAKPOINT: 1280px — Small Laptops
+   Subtle spacing refinements for narrower desktops.
+   The desktop layout remains intact; only padding tightens.
+   ────────────────────────────────────────────────────────────────── */
+@media (max-width: 1280px) {
+    .hero-copy {
+        padding-right: 2.4rem;
+        padding-top: 2rem;
+        padding-bottom: 1.5rem;
+        transform: translateY(-8%);
+        overflow-y: hidden;
+    }
+
+    .hero-copy h1 {
+        font-size: 1.2rem;
+    }
+
+    .hero-copy p {
+        font-size: 0.8rem;
+        line-height: 1.7;
+    }
+
+    .hero-copy .background-title {
+        margin-top: 1.2rem;
+        font-size: 1.2rem;
+    }
+
+    .subtitle {
+        font-size: 1.4rem;
+    }
+
+    /* Prevent portfolio from bleeding into other sections */
+    .portfolio-fullwidth {
+        height: auto;
+        max-height: var(--content-height);
+    }
+
+    .manifesto-inner {
+        max-width: 580px;
+    }
+
+    .brand-copy .brand-text-block {
+        width: min(90%, 480px);
+    }
+}
+
+
+/* ──────────────────────────────────────────────────────────────────
+   BREAKPOINT: 1024px — Tablets (landscape) / Small laptops
+   - Two-column grids stack to single column (including brand-panel)
+   - Section heights become auto (prevents content clipping)
+   - Scroll-snap disabled for variable-height sections
+   - translateY transforms removed so content isn't pushed off-screen
+   - Portfolio grid becomes 3 columns
+   ────────────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+
+    /* Prevent horizontal overflow from 100vw elements */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Disable scroll-snap — sections are now variable-height */
+    html {
+        scroll-snap-type: none;
+    }
+
+    /* Allow sections to grow beyond viewport height when stacked */
+    .site-shell>section {
+        height: auto;
+        min-height: 0;
+        overflow: visible;
+    }
+
+    /* Stack ALL two-column panels (brand-panel was missing from existing 860px query) */
+    .hero-panel,
+    .manifesto-panel,
+    .brand-panel,
+    .explore-grid,
+    .expect-grid,
+    .clients-strip {
+        grid-template-columns: 1fr;
+    }
+
+    /* Remove side borders when stacked */
+    .hero-image-wrap,
+    .explore-copy,
+    .expect-image {
+        border-right: 0;
+    }
+
+    .manifesto-image {
+        border-left: 0;
+    }
+
+    /* Constrain image heights when stacked (instead of full viewport height) */
+    .hero-image,
+    .manifesto-image,
+    .expect-image,
+    .brand-image {
+        min-height: 50vh;
+        max-height: 60vh;
+    }
+
+    /* Remove vertical shifts that push content off-screen */
+    .hero-copy {
+        transform: none;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        padding-right: 2rem;
+    }
+
+    .brand-copy {
+        transform: none;
+        padding: 2rem;
+    }
+
+    /* Contact section */
+    #contact.expect-grid {
+        height: auto;
+        min-height: 60vh;
+    }
+
+    /* Manifesto / Brand sections auto-height */
+    .manifesto-panel,
+    .brand-panel {
+        min-height: auto;
+    }
+
+    /* Move brand image below the text/button when stacked */
+    .brand-panel .brand-image-wrap {
+        order: 2;
+    }
+
+    .brand-panel .brand-copy {
+        order: 1;
+    }
+
+    .manifesto-inner {
+        max-width: 100%;
+    }
+
+    .brand-image,
+    .manifesto-image {
+        min-height: 50vh;
+    }
+}
+
+
+/* ──────────────────────────────────────────────────────────────────
+   BREAKPOINT: 768px — Tablets (portrait) / Large phones
+   - Hamburger menu replaces inline nav links
+   - Portfolio grid → 2 columns
+   - Font sizes, padding, and spacing reduced
+   - Modal becomes near-fullscreen
+   ────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* ── Hero section ── */
+    .hero-image,
+    .manifesto-image,
+    .expect-image,
+    .brand-image {
+        min-height: 40vh;
+        max-height: 50vh;
+    }
+
+    .hero-copy {
+        padding: 1.8rem 1.5rem;
+    }
+
+    .hero-copy p {
+        font-size: 0.85rem;
+    }
+
+    .subtitle {
+        font-size: 1.3rem;
+    }
+
+    .hero-copy h1 {
+        font-size: 1.2rem;
+    }
+
+    /* ── Portfolio: release fixed height so items use aspect-ratio ── */
+    .portfolio-fullwidth {
+        height: auto;
+    }
+
+    /* ── Portfolio grid: 2 columns ── */
+    .portfolio-fullwidth .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 4px;
+    }
+
+    .portfolio-fullwidth .portfolio-item {
+        aspect-ratio: 1 / 1;
+    }
+
+    /* ── Manifesto ── */
+    .manifesto-inner {
+        padding: 1.5rem;
+    }
+
+    .manifesto-inner h2 {
+        font-size: 1.2rem;
+    }
+
+    .manifesto-lines li {
+        font-size: 0.82rem;
+    }
+
+    /* ── Brand / Pamusha ── */
+    .brand-copy {
+        padding: 1.5rem;
+    }
+
+    .brand-copy .brand-text-block {
+        width: 100%;
+    }
+
+    .brand-copy .brand-script {
+        font-size: clamp(2.4rem, 8vw, 4rem);
+    }
+
+    .brand-copy p {
+        font-size: 0.85rem;
+    }
+
+    /* ── Contact ── */
+    #contact .expect-copy {
+        max-width: 100%;
+        padding: 2rem 1.5rem;
+    }
+
+    .expect-copy h3 {
+        font-size: 1.2rem;
+    }
+
+    .expect-copy p {
+        font-size: 0.85rem;
+    }
+
+    /* ── Modal ── */
+    .modal-content {
+        width: 95%;
+        height: 90%;
+    }
+
+    .modal-body {
+        flex-direction: column;
+    }
+
+    /* ── Footer ── */
+    .footer-nav-wrap {
+        position: relative;
+    }
+
+    .footer-content {
+        flex-wrap: wrap;
+        height: auto;
+        min-height: var(--footer-strip-height);
+        padding: 0.3rem 0;
+    }
+
+    .footer-cities {
+        margin-left: 0;
+    }
+
+    /* ── Background logo ── */
+    .background-logo img {
+        width: 40%;
+        margin-left: -1rem;
+    }
+}
+
+
+/* ──────────────────────────────────────────────────────────────────
+   BREAKPOINT: 480px — Mobile phones
+   - Maximum compactness: tight padding, small fonts
+   - Portfolio grid → single column
+   - Portfolio labels always visible (no hover on touch)
+   - Modal fills entire screen
+   ────────────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+
+    /* ── Nav ── */
+    .top-nav-wrap {
+        padding: 0.4rem 0.8rem;
+    }
+
+    .header-logo {
+        max-height: 29px;
+    }
+
+    .top-links a {
+        font-size: 0.78rem;
+    }
+
+    /* ── Hero ── */
+    .hero-image,
+    .manifesto-image,
+    .expect-image,
+    .brand-image {
+        min-height: 35vh;
+        max-height: 45vh;
+    }
+
+    .hero-copy {
+        padding: 1.2rem 1rem;
+    }
+
+    .hero-copy p {
+        font-size: 0.8rem;
+        text-align: left;
+    }
+
+    .hero-copy h1 {
+        font-size: 1.05rem;
+    }
+
+    .subtitle {
+        font-size: 1.05rem;
+    }
+
+    /* ── Portfolio grid: 2 columns ── */
+    .portfolio-fullwidth .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2px;
+    }
+
+    .portfolio-fullwidth .portfolio-item {
+        aspect-ratio: 1 / 1;
+    }
+
+    .portfolio-fullwidth .portfolio-title {
+        font-size: 0.75rem;
+    }
+
+    /* ── Manifesto ── */
+    .manifesto-inner {
+        padding: 1.2rem 1rem;
+    }
+
+    .manifesto-inner h2 {
+        font-size: 1.05rem;
+    }
+
+    .manifesto-lines li {
+        font-size: 0.78rem;
+        line-height: 1.7;
+    }
+
+    /* ── Brand / Pamusha ── */
+    .brand-copy {
+        padding: 1.2rem 1rem;
+    }
+
+    .brand-copy .brand-script {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .brand-copy p {
+        font-size: 0.8rem;
+        text-align: left;
+    }
+
+    .brand-copy .brand-shop-btn {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.8rem;
+    }
+
+    /* ── Contact ── */
+    #contact .expect-copy {
+        padding: 1.5rem 1rem;
+    }
+
+    .expect-copy h3 {
+        font-size: 1rem;
+    }
+
+    .expect-copy p {
+        font-size: 0.8rem;
+    }
+
+    /* ── Modal: fullscreen on mobile ── */
+    .modal-content {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    /* ── Background logo ── */
+    .background-logo img {
+        width: 50%;
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+
+    /* ── Footer ── */
+    .footer-content {
+        gap: 0.4rem;
+    }
+
+    .footer-email {
+        font-size: 0.55rem;
+    }
+
+    .footer-cities {
+        font-size: 0.55rem;
+    }
+
+    .footer-rights {
+        font-size: 0.55rem;
+    }
+}
+
+
+/* ──────────────────────────────────────────────────────────────────
+   Touch devices: show portfolio labels always (no hover available)
+   ────────────────────────────────────────────────────────────────── */
+@media (hover: none) and (pointer: coarse) {
+    /* ──────────────────────────────────────────────────────────────────
+     LANDSCAPE ORIENTATION FIXES FOR PORTFOLIO SECTION
+     ────────────────────────────────────────────────────────────────── */
+    @media (orientation: landscape) and (max-width: 1024px) {
+        .portfolio-fullwidth .portfolio-grid {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            gap: 6px;
+        }
+
+        .portfolio-fullwidth .portfolio-item {
+            aspect-ratio: 1 / 1;
+        }
+    }
+
+    @media (orientation: landscape) and (max-width: 768px) {
+        .portfolio-fullwidth .portfolio-grid {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+            gap: 4px;
+        }
+
+        .portfolio-fullwidth .portfolio-item {
+            aspect-ratio: 1 / 1;
+        }
+    }
+
+    @media (orientation: landscape) and (max-width: 600px) {
+        .portfolio-fullwidth .portfolio-grid {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            gap: 2px;
+        }
+
+        .portfolio-fullwidth .portfolio-item {
+            aspect-ratio: 1 / 1;
+        }
+    }
+
+    .portfolio-fullwidth .portfolio-meta {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.35);
+    }
+
+    /* ── Navigation: show hamburger, hide links on all touch devices ── */
+    .nav-toggle {
+        display: block;
+    }
+
+    .top-nav-wrap {
+        height: auto;
+        min-height: 0;
+        padding: 0.6rem 1rem;
+    }
+
+    .top-nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-logo {
+        max-height: 35px;
+    }
+
+    .top-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3rem;
+        padding: 0.6rem 0;
+        border-top: none;
+    }
+
+    .top-links.nav-open {
+        display: flex;
+    }
+
+    .top-links a,
+    .menu-link {
+        height: auto;
+        padding: 0.35rem 0;
+        font-size: 0.8rem;
+    }
+}

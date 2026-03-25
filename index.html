@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kudzai Chirimuuta | Personal Site</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="top-nav-wrap">
+    <div class="top-nav">
+      <a href="#about" class="brand">
+        <img src="images/Logo/Kudzai%20Chirimuuta.jpg" alt="Logo" class="header-logo" />
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      <nav class="top-links" aria-label="Main">
+        <a href="#about" onclick="closeModal()">About</a>
+        <a href="#portfolio" onclick="closeModal()">Portfolio</a>
+        <a href="#work-with-me" onclick="closeModal()">Work With Me</a>
+        <a href="#clients" onclick="closeModal()">Brand</a>
+        <a href="#contact" onclick="closeModal()">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-shell" id="top">
+
+    <section class="hero-panel" id="about">
+      <div class="hero-image-wrap">
+        <img class="hero-image" src="images/kudzai-portrait.jpg.jpg" alt="Hero portrait">
+      </div>
+      <article class="hero-copy">
+        <p>Kudzai Chirimuuta is a British Zimbabwean Architect and Design Lead with over eight years of international experience delivering and managing projects across various project sectors including, residential, commercial, mixed use, retail and large scale master planning sectors globally. Her work encompasses both high end private developments and pro bono humanitarian initiatives, reflecting a practice that operates at the intersection of commercial excellence and social impact. Her career includes roles at Foster + Partners and the international humanitarian architecture NGO Article 25. She has contributed to complex, high value developments ranging from master planned communities to flagship commercial and hospitality projects globally. Across portfolios exceeding $3 billion in value, Kudzai has led design development packages, coordinated multidisciplinary consultant teams, and guided projects from early concept through detailed design and construction delivery. Alongside commercial practice, she remains deeply committed to socially conscious architecture. She was a key contributor to the RIBA International Award for Excellence winning Coll&egrave;ge Hampat&eacute; B&acirc; in Niger, reinforcing her belief that architecture must balance beauty with responsibility and long term impact. Her work bridges imagination and execution, combining rigorous architectural thinking with pragmatic project leadership to create spaces that are purposeful, enduring, and meticulously resolved from first sketch to final handover.</p>
+        <p>Kudzai studied Architecture at the University of Liverpool and later at Oxford Brookes University, where she developed a strong foundation in contextual design, technical rigour, and urban strategy, establishing the intellectual and technical framework that continues to underpin her work today. Beyond practice, she has held teaching roles at the University of Liverpool, serving as a Studio Design Tutor for undergraduate students, mentoring emerging architects in critical thinking, technical precision, and spatial clarity. Teaching remains integral to her professional ethos, reinforcing discipline, clarity, and intellectual depth within her architectural approach. She is also the founder of a lifestyle and interiors venture inspired by African design heritage, an ongoing exploration of craft, materiality, and identity that extends beyond the scale of buildings into objects, environments, and spatial experience.</p>
+        <p>Outside of work, Kudzai finds balance through music, drawing, running, travelling, and time spent in scenic nature. She expresses her creativity through sketching, drawing, and dance, and has a deep appreciation for experiencing new cultures and ways of life. These interests provide a sense of movement, curiosity, and creative exploration that continues to enrich her perspective.</p>
+        <div class="background-logo">
+          <img src="images/Logo/Kudzai%20Chirimuuta.jpg" alt="Background Logo">
+        </div>
+      </article>
+    </section>
+
+    <section class="portfolio-fullwidth" id="portfolio">
+      <div class="portfolio-grid">
+        <div class="portfolio-item" onclick="openModal(0)" data-images="images/Projects/High-Rise/JP Morgan HQ - New York - USA.jpeg,images/Projects/High-Rise/JP Morgan HQ Lobby Interior - New York - USA.jpeg">
+          <img src="images/Projects/High-Rise/JP Morgan HQ - New York - USA.jpeg" alt="High-Rise">
+        </div>
+        <div class="portfolio-item" onclick="openModal(1)" data-images="images/Projects/Healthcare/Anandaban Hospital - Nepal.jpg,images/Projects/Healthcare/Anandaban Hospital.webp">
+          <img src="images/Projects/Healthcare/Anandaban Hospital - Nepal.jpg" alt="Healthcare">
+        </div>
+        <div class="portfolio-item" onclick="openModal(2)" data-images="images/Projects/Interior Design/Bathroom Interior.png,images/Projects/Interior Design/Bedroom Interior.png,images/Projects/Interior Design/Cabana Interior_01.jpg,images/Projects/Interior Design/Kitchen Interior Vis Zim Villa.png,images/Projects/Interior Design/Living Room Interior.png">
+          <img src="images/Projects/Interior Design/Living Room Interior.png" alt="Interior Design">
+        </div>
+        <div class="portfolio-item" onclick="openModal(3)" data-images="images/Projects/Luxury Residential/Palm Jebel Ali Residences - Dubai - UAE.png,images/Projects/Luxury Residential/Pool Side Villa.jpg,images/Projects/Luxury Residential/Private Family Villa ZW 01.png,images/Projects/Luxury Residential/Private Family Villa ZW.png,images/Projects/Luxury Residential/Private Guest House Residence - Mediterranean.jpg,images/Projects/Luxury Residential/Private Resi Zim.png,images/Projects/Luxury Residential/Private Residence - Lake Kariba - Zimbabwe.png,images/Projects/Luxury Residential/Private Residence - Mediterranean.jpg,images/Projects/Luxury Residential/Private Residency Nyanga .png,images/Projects/Luxury Residential/Private Residency Nyanga ZW.png">
+          <img src="images/Projects/Luxury Residential/Palm Jebel Ali Residences - Dubai - UAE.png" alt="Luxury Residential">
+        </div>
+        <div class="portfolio-item" onclick="openModal(4)" data-images="images/Projects/Schools/College Hampate Amadou.jpg,images/Projects/Schools/College Hampate BA - Niger - West Africa.jpg,images/Projects/Schools/Mizizi School Concept - Southern Africa.jpg,images/Projects/Schools/Mzizi School Classroom .jpg">
+          <img src="images/Projects/Schools/College Hampate BA - Niger - West Africa.jpg" alt="Schools">
+        </div>
+        <div class="portfolio-item" onclick="openModal(5)" data-images="images/Projects/Retrofit/The Ferry Terminal Retrofit - San Francisco - USA.png">
+          <img src="images/Projects/Retrofit/The Ferry Terminal Retrofit - San Francisco - USA.png" alt="Retrofit">
+        </div>
+        <div class="portfolio-item" onclick="openModal(6)" data-images="images/Projects/Masterplanning/Centennial Yards Masterplan - Atlanta - USA.jpeg">
+          <img src="images/Projects/Masterplanning/Centennial Yards Masterplan - Atlanta - USA.jpeg" alt="Masterplanning">
+        </div>
+        <div class="portfolio-item" onclick="openModal(7)" data-images="images/Projects/Pavillion/Beach Cabana Mozambique New.jpg,images/Projects/Pavillion/Beach Cabana Pavillion - Mediterrenean.jpeg">
+          <img src="images/Projects/Pavillion/Beach Cabana Pavillion - Mediterrenean.jpeg" alt="Pavillion">
+        </div>
+        <div class="portfolio-item" onclick="openModal(8)" data-images="images/Projects/Product Design/Luxury Boat Interior - Mediterranean.jpg">
+          <img src="images/Projects/Product Design/Luxury Boat Interior - Mediterranean.jpg" alt="Product Design">
+        </div>
+        <div class="portfolio-item" onclick="openModal(9)" data-images="images/Projects/Publications/Dezeen-courses_dezeen_2364_col_0.jpg,images/Projects/Publications/Kudzai Chirimuuta Fosters.jpeg,images/Projects/Publications/Origins Cookbook Contributor.png,images/Projects/Publications/Working on Model.jpg">
+          <img src="images/Projects/Publications/Kudzai Chirimuuta Fosters.jpeg" alt="Publications">
+        </div>
+        <div class="portfolio-item" onclick="openModal(10)" data-images="images/Projects/Retail/Apple Store Concept - Gangnam Seoul.jpg">
+          <img src="images/Projects/Retail/Apple Store Concept - Gangnam Seoul.jpg" alt="Retail">
+        </div>
+        <div class="portfolio-item" onclick="openModal(11)" data-images="images/Projects/Sketch %26 Illustration/Active_Landscapes_.jpg,images/Projects/Sketch %26 Illustration/The_Civic_Forum_.jpg,images/Projects/Sketch %26 Illustration/Yas Canal Island.jpg">
+          <img src="images/Projects/Sketch & Illustration/Active_Landscapes_.jpg" alt="Sketch & Illustration">
+        </div>
+      </div>
+    </section>
+
+    <!-- Full-Screen Project Viewer -->
+    <section id="portfolioModal" class="modal">
+      <header class="modal-header">
+        <button class="close-btn" onclick="closeModal()">&times;</button>
+      </header>
+      <div class="modal-content">
+        <header class="main-header">
+          <!-- Include the main website header content here -->
+        </header>
+        <div class="modal-body">
+          <div class="modal-image">
+            <img src="" alt="" id="modalImage">
+          </div>
+          <div class="modal-details">
+            <h2 id="modalTitle">Project Title</h2>
+            <p id="modalDescription">Project description goes here.</p>
+          </div>
+        </div>
+        <footer class="main-footer">
+          <!-- Include the main website footer content here -->
+        </footer>
+      </div>
+    </section>
+
+    <script>
+      const images = [];
+      let currentIndex = 0;
+
+      function openModal(index) {
+        currentIndex = index;
+        const modal = document.getElementById('portfolioModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDescription = document.getElementById('modalDescription');
+
+        modalImage.src = `images/Projects/${images[index]}`;
+        modalTitle.textContent = `Project ${index + 1}`;
+        modalDescription.textContent = `Description for Project ${index + 1}`;
+
+        modal.style.display = 'block';
+      }
+
+      function closeModal() {
+        const modal = document.getElementById('portfolioModal');
+        modal.style.display = 'none';
+      }
+
+      function changeSlide(direction) {
+        currentIndex = (currentIndex + direction + images.length) % images.length;
+        openModal(currentIndex);
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const portfolioSection = document.getElementById('portfolio');
+        const portfolioItems = document.querySelectorAll('.portfolio-item[data-images]');
+        const interval = 6000;
+        let started = false;
+
+        const itemData = [];
+
+        portfolioItems.forEach((item) => {
+          const images = item.dataset.images.split(',');
+          if (images.length <= 1) return;
+
+          let currentIndex = 0;
+          const existingImg = item.querySelector('img');
+
+          const imgA = document.createElement('img');
+          imgA.src = images[0];
+          imgA.alt = existingImg.alt;
+          imgA.className = 'crossfade-img active';
+
+          const imgB = document.createElement('img');
+          imgB.src = images[1];
+          imgB.alt = existingImg.alt;
+          imgB.className = 'crossfade-img inactive';
+
+          existingImg.replaceWith(imgA);
+          item.appendChild(imgB);
+
+          itemData.push({ imgA, imgB, images, currentIndex, showingA: true });
+        });
+
+        function startTransitions() {
+          itemData.forEach(data => {
+            setInterval(() => {
+              data.currentIndex = (data.currentIndex + 1) % data.images.length;
+              const nextIndex = (data.currentIndex + 1) % data.images.length;
+
+              if (data.showingA) {
+                data.imgB.src = data.images[data.currentIndex];
+                data.imgB.classList.add('active');
+                data.imgB.classList.remove('inactive');
+                data.imgA.classList.add('inactive');
+                data.imgA.classList.remove('active');
+                data.imgA.src = data.images[nextIndex];
+              } else {
+                data.imgA.src = data.images[data.currentIndex];
+                data.imgA.classList.add('active');
+                data.imgA.classList.remove('inactive');
+                data.imgB.classList.add('inactive');
+                data.imgB.classList.remove('active');
+                data.imgB.src = data.images[nextIndex];
+              }
+              data.showingA = !data.showingA;
+            }, interval);
+          });
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !started) {
+              started = true;
+              startTransitions();
+              observer.disconnect();
+            }
+          });
+        }, { threshold: 0.15 });
+
+        observer.observe(portfolioSection);
+      });
+    </script>
+
+    <section class="manifesto-panel" id="work-with-me">
+      <article class="manifesto-inner">
+        <ul class="manifesto-lines" style="text-align: left;">
+          <li>
+            <strong>Collaboration</strong><br>
+            Collaboration with architects, designers, and developers across all stages of a project. Contributions range from early concept development to design refinement, supporting teams in shaping thoughtful and well-resolved architectural outcomes.
+          </li>
+          <li>
+            <strong>Architectural &amp; Fa&ccedil;ade Design</strong><br>
+            Architectural and fa&ccedil;ade design from concept through developed design, with a focus on materiality, form, and performance. Emphasis on creating building envelopes that respond to context while expressing a strong architectural identity.
+          </li>
+          <li>
+            <strong>Interior Design &amp; Spatial Strategy</strong><br>
+            Interior environments shaped through careful spatial planning, material selection, and strategic design thinking. Spaces are developed to enhance movement, experience, and the relationship between interior and architecture.
+          </li>
+          <li>
+            <strong>Architectural Illustration &amp; Sketching</strong><br>
+            Expressive architectural sketches and illustrations that communicate ideas with clarity and atmosphere. Drawings support early design exploration, presentations, and visual storytelling.
+          </li>
+          <li>
+            <strong>Project Management, Leadership &amp; Delivery</strong><br>
+            Coordination and leadership across project phases, supporting design development, team collaboration, and the delivery of complex architectural projects while maintaining a clear design vision.
+          </li>
+          <li>
+            <strong>Strategic Design Advisory</strong><br>
+            Strategic guidance for practices, developers, and design teams during early project stages. Includes design reviews, concept positioning, and aligning architectural ambition with project objectives.
+          </li>
+          <li>
+            <strong>Teaching &amp; Academic Mentoring</strong><br>
+            Teaching, mentoring, and design critique supporting students and emerging designers. Focus on strengthening design thinking, critical engagement, and the communication of architectural ideas.
+          </li>
+        </ul>
+      </article>
+      <img class="manifesto-image" src="images/Sketch Work With Me.jpeg" alt="Collaborate section image">
+    </section>
+
+    <section class="brand-panel" id="clients">
+      <div class="brand-image-wrap">
+        <img class="brand-image" src="images/Pamusha 12.png" alt="Brand section image">
+      </div>
+      <article class="brand-copy">
+        <h3><span class="brand-script">Pamusha</span></h3>
+        <div class="brand-text-block">
+          <p>Pamusha, meaning home, is a luxury lifestyle and interiors brand inspired by African design heritage. Founded by Kudzai, it reflects a deep appreciation for architecture, textiles, and interior spaces, expressed through a curated collection of objects, furniture, and spatial experiences.</p>
+          <p>Rooted in craft and material richness, Pamusha blends sculptural form, tactile textiles, and bespoke design to create interiors that honour African identity through texture, tone, and composition. Each collection explores the dialogue between heritage and contemporary living, resulting in refined, timeless pieces.</p>
+          <p>At Pamusha, luxury is defined by authenticity and intention. Every piece values provenance, longevity, and cultural resonance over mass production, offering a considered approach to bringing African luxury into the home.</p>
+          <a class="brand-shop-btn" href="https://www.instagram.com/pamusha/">Visit Pamusha</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="expect-grid" id="contact">
+      <article class="expect-copy">
+        <h3>Get in Touch</h3>
+        <p>For collaborations, project enquiries, or professional opportunities, please contact me via email.</p>
+        <p class="contact-inline-email"><a href="mailto:kmchirimuuta@gmail.com">kmchirimuuta@gmail.com</a></p>
+        <img src="images/Logo/Kudzai%20Chirimuuta.jpg" alt="Kudzai Chirimuuta" class="contact-signature" />
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer-nav-wrap">
+    <div class="footer-content">
+      <a class="linkedin-link" href="https://www.linkedin.com/in/kudzaichirimuuta/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+        <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+          <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V12.2C18.5 9.94 17.98 8.21 15.34 8.21C14.07 8.21 13.22 8.91 12.87 9.57H12.83V8.43H10.31V18.5H12.94V13.52C12.94 12.21 13.19 10.94 14.81 10.94C16.41 10.94 16.43 12.44 16.43 13.6V18.5H18.5M7.26 7.27A1.53 1.53 0 0 0 8.79 5.74A1.53 1.53 0 0 0 7.26 4.21A1.53 1.53 0 0 0 5.73 5.74A1.53 1.53 0 0 0 7.26 7.27M8.58 18.5V8.43H5.95V18.5H8.58Z"/>
+        </svg>
+      </a>
+      <a class="footer-email" href="mailto:kmchirimuuta@gmail.com">kmchirimuuta@gmail.com</a>
+      <span class="footer-cities">Dubai | London | Harare</span>
+      <span class="footer-rights">All rights reserved</span>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const prevButton = document.querySelector('.prev');
+      const nextButton = document.querySelector('.next');
+      const closeButton = document.querySelector('.close');
+
+      if (prevButton) {
+        prevButton.addEventListener('click', () => {
+          console.log('Previous button clicked'); // Debug log
+          changeSlide(-1);
+        });
+      }
+
+      if (nextButton) {
+        nextButton.addEventListener('click', () => {
+          console.log('Next button clicked'); // Debug log
+          changeSlide(1);
+        });
+      }
+
+      if (closeButton) {
+        closeButton.addEventListener('click', () => {
+          console.log('Close button clicked'); // Debug log
+          closeModal();
+        });
+      }
+    });
+  </script>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
